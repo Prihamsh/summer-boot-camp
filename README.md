@@ -1,2 +1,2 @@
 # summer-boot-camp
-5 day summer boot camp learning experience.
+This is a portfolio showcasing everything I learned and my epxeriences of the Future Tech Summer camp by BBR Academy

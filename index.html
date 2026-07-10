@@ -166,31 +166,29 @@
   <div class="input-box">
     <h2 class="section-title">Contact Me</h2>
     <div class="input">
-      <!-- Added an 'id' so JavaScript can find the input field -->
       <input type="text" id="user-email" placeholder="example@email.com" />
       <i class="fa-solid fa-envelope"></i>
     </div>
-    <!-- Added an 'id' so JavaScript can find the button -->
     <div class="btn" id="submit-btn">Submit</div>
   </div>
 </section>
 
 <script>
-  // 1. Target your original elements using their new IDs
+  // Target elements
   const submitBtn = document.getElementById('submit-btn');
   const emailInput = document.getElementById('user-email');
 
-  // 2. Wait for the user to click your custom div button
+  // Wait for the user to click the button
   submitBtn.addEventListener('click', function() {
-    const emailValue = emailInput.value;
+    const emailValue = emailInput.value.trim();
 
-    // 3. Basic check to ensure they didn't leave it blank
+    // Basic check to ensure it isn't blank
     if (!emailValue) {
       alert('Please enter an email address.');
       return;
     }
 
-    // 4. Send the data to the free backend service in the background
+    // Send the data to the FormSubmit AJAX endpoint
     fetch('https://formsubmit.co', {
       method: 'POST',
       headers: {
@@ -198,14 +196,18 @@
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        email: emailValue,
+        email: emailValue, // Submits the user's input email
         message: "New subscriber from your website!"
       })
     })
     .then(response => response.json())
     .then(data => {
-      alert('Email sent successfully!');
-      emailInput.value = ''; // Clears the input field
+      if (data.success) {
+        alert('Email sent successfully!');
+        emailInput.value = ''; // Clears the input field
+      } else {
+        alert('Oops! FormSubmit rejected the request.');
+      }
     })
     .catch(error => {
       alert('Oops! Something went wrong.');
@@ -213,6 +215,7 @@
     });
   });
 </script>
+
 
    
     <footer>

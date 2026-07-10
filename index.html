@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo"><span>Prihamsh Sharma</span></a>
+      <ul class="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Education</a></li>
+        <li><a href="#projects">Accomplishments</a></li>
+        <li><a href="#business">Business</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <i class="fa-solid fa-bars" id="menu"></i>
+      <button
+        class="visitbtn"
+        onclick="window.location.href='https://github.com/prihamsh';"
+      >
+        Visit Github
+      </button>
+    </header>
+    <section class="about" id="about">
+      <div class="about-container">
+        <img src="CP1_5543.jpg" alt="" />
+        <div class="infobox">
+          <div class="text">
+            <h3>Hi, I'm</h3>
+            <h1>Prihamsh Sharma</h1>
+            <span>Sophomore @Foster High School</span>
+          </div>
+          <div class="btn-group">
+            <div class="btn" onclick="location.href='#experience'">
+              See Academic History
+            </div>
+            <div class="btn" onclick="location.href='#contact'">Contact</div>
+          </div>
+          <div class="socials">
+            <i
+              class="fa-brands fa-github"
+              onclick="location.href='https://github.com/prihamsh'"
+            ></i>
+            <i
+              class="fa-brands fa-instagram"
+              onclick="location.href='https://instagram.com/prihamsh'"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="experience" class="experience">
+      <h2 class="section-title">Education</h2>
+      <div class="experience-info">
+        <div class="grid">
+          <div class="grid-card">
+            <i class="fa-solid fa-microchip"></i>
+            <span>BBR Academy</span>
+            <h3>5 Days</h3>
+            <p>
+              Taught me how signals move through fiber, how networks get built
+              and defended, how a robot arm learns a new task, and how to plan a
+              small business from scratch.
+            </p>
+          </div>
+          <div class="grid-card">
+            <i class="fa-solid fa-robot"></i>
+            <span>Robotics</span>
+            <h3>1 year</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam,
+              adipisci.
+            </p>
+          </div>
+          <div class="grid-card">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Highschool</span>
+            <h3>1 year</h3>
+            <p>
+              Freshman Year ended with a 4.0 most of my class grades above 100%
+            </p>
+          </div>
+          <div class="grid-card">
+            <i class="fa-brands fa-google-scholar"></i>
+            <span>Middle School</span>
+            <h3>3 years</h3>
+            <p>Graduated Middle School with a 4.0 GPA</p>
+          </div>
+        </div>
+        <img src="headshot.png" alt="" />
+      </div>
+    </section>
+    <section id="projects" class="project">
+      <h2 class="section-title">Accomplishments</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="Hour Ai Certificate.jpg" alt="" />
+          <h3>Hour Ai Certificate</h3>
+          <p>Code.org's Official Ai Certificate</p>
+          <div class="btn-group">
+            <div
+              class="btn"
+              onclick="location.href='https://code.org/en-US/mix-move-ai'"
+            >
+              Website
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="Network-Diagram.jpeg" alt="" />
+          <h3>Network Diagram</h3>
+          <p>
+            Network Diagram showcasing my knowledge on creating and
+            understanding Networks
+          </p>
+          <div class="btn-group"></div>
+        </div>
+        <div class="project-card">
+          <img src="wild8's.jpeg" alt="" />
+          <h3>Wild 8's</h3>
+          <p>
+            Responses on how to use Ai to help our community stay safe online.
+          </p>
+          <div class="btn-group"></div>
+        </div>
+        <!-- <div class="project-card">
+          <img src="wild8's.jpeg" alt="" />
+          <h3>Robot</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus, aliquam.
+          </p>
+          <div class="btn-group">
+            <div class="btn">Website</div>
+            <div class="btn">Github Repo</div>
+          </div>
+        </div>-->
+      </div>
+    </section>
+    <section class="business" id="business"">
+      <h2 class="section-title">BUSINESS BASICS</h2>
+      <div class="project-card">
+        <div class="project-card-body">
+          <!-- EDIT ME: your business idea's name -->
+          <p class="project-title">Tutoring and Teaching Peers</p>
+          <!-- EDIT ME: one line description -->
+          <p class="project-sub">
+            A short budget and pricing plan for my business idea.
+          </p>
+        </div>
+        <!-- EDIT ME: paste a link to your uploaded plan/PDF in the href -->
+        <a class="btn" href="my_business_plan_tutoring_v3.pdf" target="_blank" rel="noopener"
+          >View plan →</a
+        >
+      </div>
+    </div>
+  </section>
+    <section class="contact" id="contact">
+      <div class="input-box">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="input">
+          <input type="text" placeholder="example@email.com" />
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="btn">Submit</div>
+      </div>
+    </section>
+   
+    <footer>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Education</a></li>
+        <li><a href="#projects">Accomplishments</a></li>
+        <li><a href="#business">Business</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="copyright">© All Rights Reserved | Prihamsh Sharma</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

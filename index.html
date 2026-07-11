@@ -162,60 +162,73 @@
       </div>
     </div>
 <section class="contact" id="contact">
-  <div class="input-box">
-    <h2 class="section-title">Contact Me</h2>
-    <div class="input">
-      <input type="text" id="user-email" placeholder="example@email.com" />
-      <i class="fa-solid fa-envelope"></i>
+    <div class="input-box">
+      <h2 class="section-title">Contact Me</h2>
+      
+      <div class="input">
+        <input type="text" id="user-email" placeholder="example@email.com" />
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+
+      <div class="input">
+        <textarea id="user-message" placeholder="Write your message here..."></textarea>
+        <i class="fa-solid fa-comment"></i>
+      </div>
+
+      <div class="btn" id="submit-btn">Submit</div>
+      <p>If it doesn't work feel free to write your email on a sticky note or send me an email manually</p>
     </div>
-    <div class="btn" id="submit-btn">Submit</div>
-<p>If it doesnt work feel free to write your email on a sticky note or send me an email manually</p>
-  </div>
-</section>
+  </section>
 
-<script>
-  // Target elements
-  const submitBtn = document.getElementById('submit-btn');
-  const emailInput = document.getElementById('user-email');
+  <script>
+    // Target elements
+    const submitBtn = document.getElementById('submit-btn');
+    const emailInput = document.getElementById('user-email');
+    const messageInput = document.getElementById('user-message'); // Target the new message box
 
-  // Wait for the user to click the button
-  submitBtn.addEventListener('click', function() {
-    const emailValue = emailInput.value.trim();
+    // Wait for the user to click the button
+    submitBtn.addEventListener('click', function() {
+      const emailValue = emailInput.value.trim();
+      const messageValue = messageInput.value.trim(); // Get the message text
 
-    // Basic check to ensure it isn't blank
-    if (!emailValue) {
-      alert('Please enter an email address.');
-      return;
-    }
-
-    // Send the data to the FormSubmit AJAX endpoint
-  fetch('https://formsubmit.co/ajax/prihamsh.s@gmail.com', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        email: emailValue, // Submits the user's input email
-        message: "New subscriber from your website!"
-      })
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        alert('Email sent successfully!');
-        emailInput.value = ''; // Clears the input field
-      } else {
-        alert('Oops! FormSubmit rejected the request.');
+      // Basic validation checks
+      if (!emailValue) {
+        alert('Please enter an email address.');
+        return;
       }
-    })
-    .catch(error => {
-      alert('Oops! Something went wrong.');
-      console.error(error);
-    });
-  });
-</script>
+      if (!messageValue) {
+        alert('Please enter a message.');
+        return;
+      }
 
+      // Send the data to the FormSubmit AJAX endpoint
+      fetch('https://formsubmit.co/ajax/prihamsh.s@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          email: emailValue,
+          message: messageValue // Submits the actual message typed by the user
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success === "true" || data.success === true) {
+          alert('Email sent successfully!');
+          emailInput.value = ''; // Clear email
+          messageInput.value = ''; // Clear message
+        } else {
+          alert('Oops! FormSubmit rejected the request.');
+        }
+      })
+      .catch(error => {
+        alert('Oops! Something went wrong.');
+        console.error(error);
+      });
+    });
+  </script>
 
    
     <footer>
